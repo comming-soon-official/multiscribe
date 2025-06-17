@@ -54,6 +54,76 @@ const CustomCursor = () => {
   )
 }
 
+// Floating background elements component
+const FloatingElements = () => {
+  return (
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Large gradient circle */}
+      <motion.div 
+        className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-purple-700/20 to-blue-700/20 blur-3xl"
+        animate={{ 
+          x: ['-5%', '5%'],
+          y: ['-5%', '8%'],
+        }}
+        transition={{ 
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 18,
+          ease: "easeInOut"
+        }}
+        style={{ top: '10%', left: '15%' }}
+      />
+      
+      {/* Small gradient blob */}
+      <motion.div 
+        className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-pink-600/20 to-indigo-600/20 blur-2xl"
+        animate={{ 
+          x: ['8%', '-8%'],
+          y: ['5%', '-7%'],
+        }}
+        transition={{ 
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 23,
+          ease: "easeInOut"
+        }}
+        style={{ top: '65%', right: '10%' }}
+      />
+      
+      {/* Medium gradient shape */}
+      <motion.div 
+        className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-violet-500/15 to-cyan-500/15 blur-3xl"
+        animate={{ 
+          x: ['-3%', '7%'],
+          y: ['7%', '-4%'],
+        }}
+        transition={{ 
+          repeat: Infinity,
+          repeatType: "reverse", 
+          duration: 20,
+          ease: "easeInOut"
+        }}
+        style={{ top: '30%', right: '25%' }}
+      />
+      
+      {/* Small accent element */}
+      <motion.div 
+        className="absolute w-[150px] h-[150px] rounded-full bg-gradient-to-r from-[#7209B7]/30 to-[#3A0CA3]/30 blur-xl"
+        animate={{ 
+          x: ['5%', '-5%', '5%'],
+          y: ['-7%', '7%', '-7%'],
+        }}
+        transition={{ 
+          repeat: Infinity,
+          duration: 15,
+          ease: "easeInOut"
+        }}
+        style={{ bottom: '15%', left: '20%' }}
+      />
+    </div>
+  );
+};
+
 export default function Home() {
   return (
     <main className="bg-[#0F0A19] text-white overflow-hidden">
@@ -62,8 +132,8 @@ export default function Home() {
         <CustomCursor />
       </div>
       
-      {/* Background noise texture */}
-      <div className="fixed inset-0 bg-noise opacity-[0.03] pointer-events-none z-10"></div>
+      {/* Floating background elements */}
+      <FloatingElements />
       
       <HeroSection />
       <FeatureSection />
@@ -93,22 +163,6 @@ export default function Home() {
           />
         </svg>
       </div>
-      
-      <style jsx global>{`
-        @keyframes grain {
-          0%, 100% { transform: translate(0, 0) }
-          10% { transform: translate(-5%, -10%) }
-          30% { transform: translate(3%, -15%) }
-          50% { transform: translate(12%, 9%) }
-          70% { transform: translate(9%, 4%) }
-          90% { transform: translate(-1%, 7%) }
-        }
-        
-        .bg-noise {
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23ffffff'/%3E%3C/svg%3E");
-          animation: grain 8s steps(10) infinite;
-        }
-      `}</style>
     </main>
   )
 }
