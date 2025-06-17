@@ -33,19 +33,19 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div 
-        className="fixed w-5 h-5 rounded-full bg-white mix-blend-difference z-50 pointer-events-none"
+        className="fixed w-7 h-7 rounded-full bg-white mix-blend-difference z-50 pointer-events-none"
         animate={{ 
-          x: position.x - 10, 
-          y: position.y - 10,
+          x: position.x - 14, 
+          y: position.y - 14,
           scale: isPointer ? 1.5 : 1
         }}
         transition={{ type: "spring", stiffness: 500, damping: 28 }}
       />
       <motion.div 
-        className="fixed w-10 h-10 rounded-full border border-white/50 z-50 pointer-events-none"
+        className="fixed w-14 h-14 rounded-full border border-white/50 z-50 pointer-events-none"
         animate={{ 
-          x: position.x - 20, 
-          y: position.y - 20,
+          x: position.x - 28, 
+          y: position.y - 28,
           scale: isPointer ? 1.2 : 1
         }}
         transition={{ type: "spring", stiffness: 250, damping: 20 }}
