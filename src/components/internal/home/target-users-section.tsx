@@ -281,7 +281,7 @@ const TargetUsersSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="target-users" className="relative py-32 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[#0F0A19]" />

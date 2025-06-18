@@ -11,21 +11,34 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 
-// Navigation links structure
+// Navigation links structure with references to the sections we've implemented
 const navLinks = [
-  { name: "Home", href: "/" },
   {
     name: "Features",
     href: "/#features",
     dropdown: [
-      { name: "Accuracy", href: "/#accuracy" },
-      { name: "Languages", href: "/#languages" },
-      { name: "Export Options", href: "/#export" },
+      { name: "Accuracy", href: "/#features" },
+      { name: "Languages", href: "/#features" },
+      { name: "Export Options", href: "/#features" },
     ],
   },
-  { name: "Pricing", href: "/pricing" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Blog", href: "/blog" },
+  {
+    name: "How It Works",
+    href: "/#how-it-works",
+  },
+  {
+    name: "Solutions",
+    href: "/#",
+    dropdown: [
+      { name: "For Content Creators", href: "/#target-users" },
+      { name: "For Journalists", href: "/#target-users" },
+      { name: "For Businesses", href: "/#target-users" },
+      { name: "For Researchers", href: "/#target-users" },
+      { name: "For Educators", href: "/#target-users" },
+      { name: "For Legal Professionals", href: "/#target-users" },
+    ],
+  },
+  { name: "Why MultiScribe", href: "/#why-choose-us" },
 ];
 
 const Navbar = () => {
@@ -93,7 +106,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group">
                 <div
@@ -114,7 +127,7 @@ const Navbar = () => {
 
                 {/* Dropdown for desktop */}
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[#150C28] border border-white/10 overflow-hidden transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 origin-top-left z-50">
+                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-[#150C28] border border-white/10 overflow-hidden transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 origin-top-left z-50">
                     <div className="py-1">
                       {link.dropdown.map((subLink) => (
                         <Link
