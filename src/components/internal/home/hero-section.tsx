@@ -6,11 +6,10 @@ import {
   ArrowUpRight,
   Languages,
   FileAudio2,
-  WavesIcon,
   Play,
   RefreshCw,
-  X,
   Pause,
+  LanguagesIcon,
 } from "lucide-react";
 import { Orbitron } from "next/font/google";
 import { SearchSelect } from "@/components/ui/search-select";
@@ -514,7 +513,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3A0CA3]/20 to-[#7209B7]/20 border border-purple-500/20 rounded-full py-2 px-4 mb-8"
             >
-              <WavesIcon className="w-4 h-4 text-[#7209B7]" />
+              <LanguagesIcon className="w-4 h-4 text-[#7209B7]" />
               <span className="text-xs font-semibold tracking-wider text-[#F72585]">
                 AI-POWERED TRANSCRIPTION
               </span>
