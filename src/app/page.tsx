@@ -1,124 +1,127 @@
-'use client'
-
-import React, { useEffect, useState } from 'react'
-import HeroSection from '@/components/internal/home/hero-section'
-import FeatureSection from '@/components/internal/home/feature-section'
-import { motion } from 'framer-motion'
+"use client";
+import React, { useEffect, useState } from "react";
+import HeroSection from "@/components/internal/home/hero-section";
+import FeatureSection from "@/components/internal/home/feature-section";
+import ProblemSolutionSection from "@/components/internal/home/problem-solution-section";
+import HowItWorksSection from "@/components/internal/home/how-it-works-section";
+import TargetUsersSection from "@/components/internal/home/target-users-section";
+import WhyChooseUsSection from "@/components/internal/home/why-choose-us-section";
+import { motion } from "framer-motion";
 
 // Custom cursor component
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isPointer, setIsPointer] = useState(false)
-  
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isPointer, setIsPointer] = useState(false);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY })
-      
+      setPosition({ x: e.clientX, y: e.clientY });
+
       // Check if cursor is over a clickable element
-      const target = e.target as HTMLElement
-      const isClickable = 
-        target.tagName.toLowerCase() === 'button' || 
-        target.tagName.toLowerCase() === 'a' ||
-        target.closest('button') ||
-        target.closest('a') ||
-        target.classList.contains('cursor-pointer')
-      
-      setIsPointer(!!isClickable)
-    }
-    
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-  
+      const target = e.target as HTMLElement;
+      const isClickable =
+        target.tagName.toLowerCase() === "button" ||
+        target.tagName.toLowerCase() === "a" ||
+        target.closest("button") ||
+        target.closest("a") ||
+        target.classList.contains("cursor-pointer");
+
+      setIsPointer(!!isClickable);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <>
-      <motion.div 
+      <motion.div
         className="fixed w-7 h-7 rounded-full bg-white mix-blend-difference z-50 pointer-events-none"
-        animate={{ 
-          x: position.x - 14, 
+        animate={{
+          x: position.x - 14,
           y: position.y - 14,
-          scale: isPointer ? 1.5 : 1
+          scale: isPointer ? 2.7 : 1.5,
         }}
         transition={{ type: "spring", stiffness: 500, damping: 28 }}
       />
-      <motion.div 
+      <motion.div
         className="fixed w-14 h-14 rounded-full border border-white/50 z-50 pointer-events-none"
-        animate={{ 
-          x: position.x - 28, 
+        animate={{
+          x: position.x - 28,
           y: position.y - 28,
-          scale: isPointer ? 1.2 : 1
+          scale: isPointer ? 2.2 : 1.5,
         }}
         transition={{ type: "spring", stiffness: 250, damping: 20 }}
       />
     </>
-  )
-}
+  );
+};
 
 // Floating background elements component
 const FloatingElements = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Large gradient circle */}
-      <motion.div 
+      <motion.div
         className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-purple-700/20 to-blue-700/20 blur-3xl"
-        animate={{ 
-          x: ['-5%', '5%'],
-          y: ['-5%', '8%'],
+        animate={{
+          x: ["-5%", "5%"],
+          y: ["-5%", "8%"],
         }}
-        transition={{ 
+        transition={{
           repeat: Infinity,
           repeatType: "reverse",
           duration: 18,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
-        style={{ top: '10%', left: '15%' }}
+        style={{ top: "10%", left: "15%" }}
       />
-      
+
       {/* Small gradient blob */}
-      <motion.div 
+      <motion.div
         className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-pink-600/20 to-indigo-600/20 blur-2xl"
-        animate={{ 
-          x: ['8%', '-8%'],
-          y: ['5%', '-7%'],
+        animate={{
+          x: ["8%", "-8%"],
+          y: ["5%", "-7%"],
         }}
-        transition={{ 
+        transition={{
           repeat: Infinity,
           repeatType: "reverse",
           duration: 23,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
-        style={{ top: '65%', right: '10%' }}
+        style={{ top: "65%", right: "10%" }}
       />
-      
+
       {/* Medium gradient shape */}
-      <motion.div 
+      <motion.div
         className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-violet-500/15 to-cyan-500/15 blur-3xl"
-        animate={{ 
-          x: ['-3%', '7%'],
-          y: ['7%', '-4%'],
+        animate={{
+          x: ["-3%", "7%"],
+          y: ["7%", "-4%"],
         }}
-        transition={{ 
+        transition={{
           repeat: Infinity,
-          repeatType: "reverse", 
+          repeatType: "reverse",
           duration: 20,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
-        style={{ top: '30%', right: '25%' }}
+        style={{ top: "30%", right: "25%" }}
       />
-      
+
       {/* Small accent element */}
-      <motion.div 
+      <motion.div
         className="absolute w-[150px] h-[150px] rounded-full bg-gradient-to-r from-[#7209B7]/30 to-[#3A0CA3]/30 blur-xl"
-        animate={{ 
-          x: ['5%', '-5%', '5%'],
-          y: ['-7%', '7%', '-7%'],
+        animate={{
+          x: ["5%", "-5%", "5%"],
+          y: ["-7%", "7%", "-7%"],
         }}
-        transition={{ 
+        transition={{
           repeat: Infinity,
           duration: 15,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
-        style={{ bottom: '15%', left: '20%' }}
+        style={{ bottom: "15%", left: "20%" }}
       />
     </div>
   );
@@ -131,17 +134,25 @@ export default function Home() {
       <div className="hidden md:block">
         <CustomCursor />
       </div>
-      
+
       {/* Floating background elements */}
       <FloatingElements />
-      
+
       <HeroSection />
       <FeatureSection />
-      
+      <ProblemSolutionSection />
+      <HowItWorksSection />
+      <TargetUsersSection />
+      <WhyChooseUsSection />
+
       {/* Audio wave footer */}
       <div className="h-48 bg-[#0F0A19] relative overflow-hidden">
-        <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
-          <motion.path 
+        <svg
+          className="absolute bottom-0 w-full"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <motion.path
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 0.2 }}
             transition={{ duration: 2, ease: "easeInOut" }}
@@ -151,7 +162,7 @@ export default function Home() {
             stroke="#7209B7"
             strokeWidth="2"
           />
-          <motion.path 
+          <motion.path
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 0.3 }}
             transition={{ duration: 2.5, ease: "easeInOut", delay: 0.2 }}
@@ -164,5 +175,5 @@ export default function Home() {
         </svg>
       </div>
     </main>
-  )
+  );
 }
