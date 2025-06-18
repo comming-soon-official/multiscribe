@@ -105,7 +105,8 @@ const WaveVisualizer = () => {
   );
 };
 
-const LanguagesPopover = ({
+// Export the LanguagesPopover component so it can be imported in hero-section.tsx
+export const LanguagesPopover = ({
   isOpen,
   onClose,
 }: {
@@ -710,41 +711,6 @@ Turn any audio or video into precise text.`}
             </div>
           </motion.div>
         </div>
-
-        {/* Final CTA section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="relative mt-20 rounded-3xl overflow-hidden"
-        >
-          {/* Background gradients */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#7209B7]/30 to-[#F72585]/20"></div>
-          <div className="absolute inset-0 bg-[#0F0A19]/80"></div>
-
-          {/* Decorative elements */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F72585] to-transparent"></div>
-          <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full border border-[#7209B7]/20"></div>
-          <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full border border-[#F72585]/20"></div>
-
-          <div className="relative p-12 md:p-20 z-10 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Ready to Transform Your Audio?
-            </h2>
-            <p className="text-white/70 max-w-2xl mx-auto mb-10 text-lg">
-              Join thousands of professionals who trust MultiScribe for
-              accurate, fast, and flexible transcription.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-gradient-to-r from-[#7209B7] to-[#F72585] rounded-full text-lg font-medium text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all"
-            >
-              Start Transcribing Now
-            </motion.button>
-          </div>
-        </motion.div>
       </div>
 
       {/* Languages Popover */}

@@ -303,7 +303,7 @@ const HowItWorksSection = () => {
         {/* Interactive demo button */}
         <div className="flex justify-center mt-12">
           <motion.a
-            href="#demo"
+            href="#hero"
             className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7209B7]/20 to-[#F72585]/20 rounded-lg border border-purple-500/20 text-white hover:bg-gradient-to-r hover:from-[#7209B7]/30 hover:to-[#F72585]/30 transition-all"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -343,7 +343,7 @@ const TargetUsersSection = () => {
             ))}
 
             {/* Stats block */}
-            <motion.div
+            {/* <motion.div
               className="bg-gradient-to-br from-[#150C28] to-[#0F0A19] rounded-xl p-6 mt-6 border border-white/5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -369,7 +369,7 @@ const TargetUsersSection = () => {
                   <p className="text-white/50 text-sm">Industries</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Right content - User profile details */}

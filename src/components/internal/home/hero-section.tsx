@@ -10,10 +10,13 @@ import {
   RefreshCw,
   Pause,
   LanguagesIcon,
+  Globe2,
+  ChevronRight,
 } from "lucide-react";
 import { Orbitron } from "next/font/google";
 import { SearchSelect } from "@/components/ui/search-select";
 import { languages } from "./language-list";
+import { LanguagesPopover } from "./feature-section"; // Import LanguagesPopover component
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -257,6 +260,7 @@ const HeroSection = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const controls = useAnimation();
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [showLanguagesPopover, setShowLanguagesPopover] = useState(false); // Add state for languages popover
 
   // Handle drag events
   const handleDrag = (e: React.DragEvent) => {
@@ -453,7 +457,10 @@ const HeroSection = () => {
     "Select language";
 
   return (
-    <section className="min-h-screen relative pt-20 md:mt-20 pb-40 overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen relative pt-20 md:mt-20 pb-40 overflow-hidden"
+    >
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Animated circles */}
@@ -583,8 +590,13 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="flex flex-wrap gap-6 items-center"
             >
-              <button className="bg-gradient-to-r from-[#7209B7] to-[#F72585] text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all">
-                Start Transcribing
+              <button
+                onClick={() => setShowLanguagesPopover(true)}
+                className="bg-gradient-to-r from-[#7209B7] to-[#F72585] text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all flex items-center gap-2"
+              >
+                <Globe2 className="w-5 h-5" />
+                <span>View Supported Languages</span>
+                <ChevronRight className="w-4 h-4" />
               </button>
 
               <a
@@ -686,6 +698,12 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Languages Popover */}
+      <LanguagesPopover
+        isOpen={showLanguagesPopover}
+        onClose={() => setShowLanguagesPopover(false)}
+      />
     </section>
   );
 };

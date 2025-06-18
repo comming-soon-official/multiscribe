@@ -12,6 +12,7 @@ import {
   Sparkles,
   Lightbulb,
 } from "lucide-react";
+import Link from "next/link";
 
 // Problem-solution card that flips between both sides
 const FlippableCard = ({
@@ -230,9 +231,12 @@ const ProblemSolutionSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              <button className="relative z-10 px-8 py-4 bg-gradient-to-r from-[#7209B7] to-[#F72585] rounded-full text-lg font-medium text-white transition-all">
+              <Link
+                href={"/#hero"}
+                className="relative z-10 px-8 py-4 bg-gradient-to-r from-[#7209B7] to-[#F72585] rounded-full text-lg font-medium text-white transition-all"
+              >
                 Try MultiScribe Free
-              </button>
+              </Link>
               <div className="absolute -inset-1 bg-gradient-to-r from-[#7209B7] to-[#F72585] rounded-full blur-md opacity-70 z-0"></div>
             </motion.div>
           </div>
