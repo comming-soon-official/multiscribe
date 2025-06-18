@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Orbitron } from "next/font/google";
 import { SearchSelect } from "@/components/ui/search-select";
+import { languages } from "./language-list";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -60,258 +61,6 @@ const AudioWave = ({ playing = false }: { playing?: boolean }) => {
   );
 };
 
-// Language options
-const languages = [
-  { value: "abkhaz", label: "Abkhaz" },
-  { value: "acehnese", label: "Acehnese" },
-  { value: "acholi", label: "Acholi" },
-  { value: "afar", label: "Afar" },
-  { value: "afrikaans", label: "Afrikaans" },
-  { value: "albanian", label: "Albanian" },
-  { value: "alur", label: "Alur" },
-  { value: "amharic", label: "Amharic" },
-  { value: "arabic", label: "Arabic" },
-  { value: "armenian", label: "Armenian" },
-  { value: "assamese", label: "Assamese" },
-  { value: "avar", label: "Avar" },
-  { value: "awadhi", label: "Awadhi" },
-  { value: "aymara", label: "Aymara" },
-  { value: "azerbaijani", label: "Azerbaijani" },
-  { value: "balinese", label: "Balinese" },
-  { value: "baluchi", label: "Baluchi" },
-  { value: "bambara", label: "Bambara" },
-  { value: "baoule", label: "Baoulé" },
-  { value: "bashkir", label: "Bashkir" },
-  { value: "basque", label: "Basque" },
-  { value: "batak_karo", label: "Batak Karo" },
-  { value: "batak_simalungun", label: "Batak Simalungun" },
-  { value: "batak_toba", label: "Batak Toba" },
-  { value: "belarusian", label: "Belarusian" },
-  { value: "bemba", label: "Bemba" },
-  { value: "bengali", label: "Bengali" },
-  { value: "betawi", label: "Betawi" },
-  { value: "bhojpuri", label: "Bhojpuri" },
-  { value: "bikol", label: "Bikol" },
-  { value: "bosnian", label: "Bosnian" },
-  { value: "breton", label: "Breton" },
-  { value: "bulgarian", label: "Bulgarian" },
-  { value: "buryat", label: "Buryat" },
-  { value: "cantonese", label: "Cantonese" },
-  { value: "catalan", label: "Catalan" },
-  { value: "cebuano", label: "Cebuano" },
-  { value: "chamorro", label: "Chamorro" },
-  { value: "chechen", label: "Chechen" },
-  { value: "chichewa", label: "Chichewa" },
-  { value: "chinese_simplified", label: "Chinese (Simplified)" },
-  { value: "chinese_traditional", label: "Chinese (Traditional)" },
-  { value: "chuukese", label: "Chuukese" },
-  { value: "chuvash", label: "Chuvash" },
-  { value: "corsican", label: "Corsican" },
-  { value: "crimean_tatar_cyrillic", label: "Crimean Tatar (Cyrillic)" },
-  { value: "crimean_tatar_latin", label: "Crimean Tatar (Latin)" },
-  { value: "croatian", label: "Croatian" },
-  { value: "czech", label: "Czech" },
-  { value: "danish", label: "Danish" },
-  { value: "dari", label: "Dari" },
-  { value: "dhivehi", label: "Dhivehi" },
-  { value: "dinka", label: "Dinka" },
-  { value: "dogri", label: "Dogri" },
-  { value: "dombe", label: "Dombe" },
-  { value: "dutch", label: "Dutch" },
-  { value: "dyula", label: "Dyula" },
-  { value: "dzongkha", label: "Dzongkha" },
-  { value: "english", label: "English" },
-  { value: "esperanto", label: "Esperanto" },
-  { value: "estonian", label: "Estonian" },
-  { value: "ewe", label: "Ewe" },
-  { value: "faroese", label: "Faroese" },
-  { value: "fijian", label: "Fijian" },
-  { value: "filipino", label: "Filipino" },
-  { value: "finnish", label: "Finnish" },
-  { value: "fon", label: "Fon" },
-  { value: "french", label: "French" },
-  { value: "french_canada", label: "French (Canada)" },
-  { value: "frisian", label: "Frisian" },
-  { value: "friulian", label: "Friulian" },
-  { value: "fulani", label: "Fulani" },
-  { value: "ga", label: "Ga" },
-  { value: "galician", label: "Galician" },
-  { value: "georgian", label: "Georgian" },
-  { value: "german", label: "German" },
-  { value: "greek", label: "Greek" },
-  { value: "guarani", label: "Guarani" },
-  { value: "gujarati", label: "Gujarati" },
-  { value: "haitian_creole", label: "Haitian Creole" },
-  { value: "hakha_chin", label: "Hakha Chin" },
-  { value: "hausa", label: "Hausa" },
-  { value: "hawaiian", label: "Hawaiian" },
-  { value: "hebrew", label: "Hebrew" },
-  { value: "hiligaynon", label: "Hiligaynon" },
-  { value: "hindi", label: "Hindi" },
-  { value: "hmong", label: "Hmong" },
-  { value: "hungarian", label: "Hungarian" },
-  { value: "hunsrik", label: "Hunsrik" },
-  { value: "iban", label: "Iban" },
-  { value: "icelandic", label: "Icelandic" },
-  { value: "igbo", label: "Igbo" },
-  { value: "ilocano", label: "Ilocano" },
-  { value: "indonesian", label: "Indonesian" },
-  { value: "inuktut_latin", label: "Inuktut (Latin)" },
-  { value: "inuktut_syllabics", label: "Inuktut (Syllabics)" },
-  { value: "irish", label: "Irish" },
-  { value: "italian", label: "Italian" },
-  { value: "japanese", label: "Japanese" },
-  { value: "javanese", label: "Javanese" },
-  { value: "jingpo", label: "Jingpo" },
-  { value: "kalaallisut", label: "Kalaallisut" },
-  { value: "kannada", label: "Kannada" },
-  { value: "kanuri", label: "Kanuri" },
-  { value: "kapampangan", label: "Kapampangan" },
-  { value: "kazakh", label: "Kazakh" },
-  { value: "khasi", label: "Khasi" },
-  { value: "khmer", label: "Khmer" },
-  { value: "kiga", label: "Kiga" },
-  { value: "kikongo", label: "Kikongo" },
-  { value: "kinyarwanda", label: "Kinyarwanda" },
-  { value: "kituba", label: "Kituba" },
-  { value: "kokborok", label: "Kokborok" },
-  { value: "komi", label: "Komi" },
-  { value: "konkani", label: "Konkani" },
-  { value: "korean", label: "Korean" },
-  { value: "krio", label: "Krio" },
-  { value: "kurdish_kurmanji", label: "Kurdish (Kurmanji)" },
-  { value: "kurdish_sorani", label: "Kurdish (Sorani)" },
-  { value: "kyrgyz", label: "Kyrgyz" },
-  { value: "lao", label: "Lao" },
-  { value: "latgalian", label: "Latgalian" },
-  { value: "latin", label: "Latin" },
-  { value: "latvian", label: "Latvian" },
-  { value: "ligurian", label: "Ligurian" },
-  { value: "limburgish", label: "Limburgish" },
-  { value: "lingala", label: "Lingala" },
-  { value: "lithuanian", label: "Lithuanian" },
-  { value: "lombard", label: "Lombard" },
-  { value: "luganda", label: "Luganda" },
-  { value: "luo", label: "Luo" },
-  { value: "luxembourgish", label: "Luxembourgish" },
-  { value: "macedonian", label: "Macedonian" },
-  { value: "madurese", label: "Madurese" },
-  { value: "maithili", label: "Maithili" },
-  { value: "makassar", label: "Makassar" },
-  { value: "malagasy", label: "Malagasy" },
-  { value: "malay", label: "Malay" },
-  { value: "malay_jawi", label: "Malay (Jawi)" },
-  { value: "malayalam", label: "Malayalam" },
-  { value: "maltese", label: "Maltese" },
-  { value: "mam", label: "Mam" },
-  { value: "manx", label: "Manx" },
-  { value: "maori", label: "Maori" },
-  { value: "marathi", label: "Marathi" },
-  { value: "marshallese", label: "Marshallese" },
-  { value: "marwadi", label: "Marwadi" },
-  { value: "mauritian_creole", label: "Mauritian Creole" },
-  { value: "meadow_mari", label: "Meadow Mari" },
-  { value: "meiteilon_manipuri", label: "Meiteilon (Manipuri)" },
-  { value: "minang", label: "Minang" },
-  { value: "mizo", label: "Mizo" },
-  { value: "mongolian", label: "Mongolian" },
-  { value: "myanmar_burmese", label: "Myanmar (Burmese)" },
-  { value: "nahuatl_eastern_huasteca", label: "Nahuatl (Eastern Huasteca)" },
-  { value: "ndau", label: "Ndau" },
-  { value: "ndebele_south", label: "Ndebele (South)" },
-  { value: "nepalbhasa_newari", label: "Nepalbhasa (Newari)" },
-  { value: "nepali", label: "Nepali" },
-  { value: "nko", label: "NKo" },
-  { value: "norwegian", label: "Norwegian" },
-  { value: "nuer", label: "Nuer" },
-  { value: "occitan", label: "Occitan" },
-  { value: "odia_oriya", label: "Odia (Oriya)" },
-  { value: "oromo", label: "Oromo" },
-  { value: "ossetian", label: "Ossetian" },
-  { value: "pangasinan", label: "Pangasinan" },
-  { value: "papiamento", label: "Papiamento" },
-  { value: "pashto", label: "Pashto" },
-  { value: "persian", label: "Persian" },
-  { value: "polish", label: "Polish" },
-  { value: "portuguese_brazil", label: "Portuguese (Brazil)" },
-  { value: "portuguese_portugal", label: "Portuguese (Portugal)" },
-  { value: "punjabi_gurmukhi", label: "Punjabi (Gurmukhi)" },
-  { value: "punjabi_shahmukhi", label: "Punjabi (Shahmukhi)" },
-  { value: "quechua", label: "Quechua" },
-  { value: "qeqchi", label: "Q'eqchi'" },
-  { value: "romani", label: "Romani" },
-  { value: "romanian", label: "Romanian" },
-  { value: "rundi", label: "Rundi" },
-  { value: "russian", label: "Russian" },
-  { value: "samoan", label: "Samoan" },
-  { value: "sango", label: "Sango" },
-  { value: "sanskrit", label: "Sanskrit" },
-  { value: "santali_latin", label: "Santali (Latin)" },
-  { value: "santali_olchiki", label: "Santali (Ol Chiki)" },
-  { value: "scots_gaelic", label: "Scots Gaelic" },
-  { value: "sepedi", label: "Sepedi" },
-  { value: "serbian_cyrillic", label: "Serbian (Cyrillic)" },
-  { value: "serbian_latin", label: "Serbian (Latin)" },
-  { value: "sesotho", label: "Sesotho" },
-  { value: "seychellois_creole", label: "Seychellois Creole" },
-  { value: "shan", label: "Shan" },
-  { value: "shona", label: "Shona" },
-  { value: "sicilian", label: "Sicilian" },
-  { value: "silesian", label: "Silesian" },
-  { value: "sindhi", label: "Sindhi" },
-  { value: "sinhala", label: "Sinhala" },
-  { value: "slovak", label: "Slovak" },
-  { value: "slovenian", label: "Slovenian" },
-  { value: "somali", label: "Somali" },
-  { value: "spanish", label: "Spanish" },
-  { value: "sundanese", label: "Sundanese" },
-  { value: "susu", label: "Susu" },
-  { value: "swahili", label: "Swahili" },
-  { value: "swati", label: "Swati" },
-  { value: "swedish", label: "Swedish" },
-  { value: "tahitian", label: "Tahitian" },
-  { value: "tajik", label: "Tajik" },
-  { value: "tamazight", label: "Tamazight" },
-  { value: "tamazight_tifinagh", label: "Tamazight (Tifinagh)" },
-  { value: "tamil", label: "Tamil" },
-  { value: "tatar", label: "Tatar" },
-  { value: "telugu", label: "Telugu" },
-  { value: "tetum", label: "Tetum" },
-  { value: "thai", label: "Thai" },
-  { value: "tibetan", label: "Tibetan" },
-  { value: "tigrinya", label: "Tigrinya" },
-  { value: "tiv", label: "Tiv" },
-  { value: "tok_pisin", label: "Tok Pisin" },
-  { value: "tongan", label: "Tongan" },
-  { value: "tshiluba", label: "Tshiluba" },
-  { value: "tsonga", label: "Tsonga" },
-  { value: "tswana", label: "Tswana" },
-  { value: "tulu", label: "Tulu" },
-  { value: "tumbuka", label: "Tumbuka" },
-  { value: "turkish", label: "Turkish" },
-  { value: "turkmen", label: "Turkmen" },
-  { value: "tuvalu", label: "Tuvan" },
-  { value: "twi", label: "Twi" },
-  { value: "udmurt", label: "Udmurt" },
-  { value: "ukrainian", label: "Ukrainian" },
-  { value: "urdu", label: "Urdu" },
-  { value: "uyghur", label: "Uyghur" },
-  { value: "uzbek", label: "Uzbek" },
-  { value: "venda", label: "Venda" },
-  { value: "venetian", label: "Venetian" },
-  { value: "vietnamese", label: "Vietnamese" },
-  { value: "waray", label: "Waray" },
-  { value: "welsh", label: "Welsh" },
-  { value: "wolof", label: "Wolof" },
-  { value: "xhosa", label: "Xhosa" },
-  { value: "yakut", label: "Yakut" },
-  { value: "yiddish", label: "Yiddish" },
-  { value: "yoruba", label: "Yoruba" },
-  { value: "yucatec_maya", label: "Yucatec Maya" },
-  { value: "zapotec", label: "Zapotec" },
-  { value: "zulu", label: "Zulu" },
-];
-
 // Convert languages to the format expected by SearchSelect
 const languageOptions = languages.map((lang) => ({
   label: lang.label,
@@ -337,7 +86,7 @@ const UploadState = ({
   dragActive,
 }: UploadStateProps) => (
   <div
-    className={`border-2 border-dashed border-white/10 rounded-xl p-10 cursor-pointer text-center h-72 flex flex-col items-center justify-center hover:border-[#7209B7]/40 transition-colors duration-300 ${
+    className={`border-2 border-dashed border-white/10 rounded-xl p-12 cursor-pointer text-center h-96 flex flex-col items-center justify-center hover:border-[#7209B7]/40 transition-colors duration-300 ${
       dragActive ? "bg-[#7209B7]/10" : ""
     }`}
     onDragEnter={onDragEnter}
@@ -361,14 +110,14 @@ const UploadState = ({
       accept="audio/*,video/*"
       onChange={handleFileSelect}
     />
-    <div className="w-20 h-20 rounded-full bg-[#7209B7]/10 flex items-center justify-center mb-6">
-      <FileAudio2 className="w-8 h-8 text-[#F72585]" />
+    <div className="w-24 h-24 rounded-full bg-[#7209B7]/10 flex items-center justify-center mb-8">
+      <FileAudio2 className="w-10 h-10 text-[#F72585]" />
     </div>
-    <p className="text-xl font-medium text-white mb-2">
+    <p className="text-2xl font-medium text-white mb-3">
       Drop your audio or video here
     </p>
-    <p className="text-white/50">or click to browse your files</p>
-    <p className="text-white/30 text-xs mt-4">
+    <p className="text-white/50 text-lg">or click to browse your files</p>
+    <p className="text-white/30 text-sm mt-5">
       Supports MP3, WAV, MP4, MOV & more
     </p>
   </div>
@@ -392,31 +141,31 @@ const PreviewState = ({
   formatFileSize,
   getFileExtension,
 }: PreviewStateProps) => (
-  <div className="border-2 border-[#7209B7]/30 rounded-xl p-8 text-center h-72 flex flex-col justify-between">
+  <div className="border-2 border-[#7209B7]/30 rounded-xl p-10 text-center h-96 flex flex-col justify-between">
     {/* File info */}
     <div className="flex-1 flex flex-col items-center justify-center">
-      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7209B7]/30 to-[#F72585]/30 flex items-center justify-center mb-4">
-        <span className="text-lg font-bold text-white">
+      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7209B7]/30 to-[#F72585]/30 flex items-center justify-center mb-6">
+        <span className="text-xl font-bold text-white">
           {getFileExtension(uploadedFile.name)}
         </span>
       </div>
 
-      <h4 className="font-medium text-white mb-1 max-w-xs truncate">
+      <h4 className="font-medium text-xl text-white mb-2 max-w-xs truncate">
         {uploadedFile.name}
       </h4>
 
-      <p className="text-white/50 text-sm">
+      <p className="text-white/50 text-base">
         {formatFileSize(uploadedFile.size)}
       </p>
 
       {/* Audio wave animation */}
-      <div className="mt-4">
+      <div className="mt-8">
         <AudioWave playing={isPlaying} />
       </div>
     </div>
 
     {/* Action buttons */}
-    <div className="flex justify-center gap-4 mt-4">
+    <div className="flex justify-center gap-5 mt-6">
       <button
         onClick={(e) => {
           e.stopPropagation();
@@ -424,14 +173,14 @@ const PreviewState = ({
         }}
         className={`flex items-center gap-2 ${
           isPlaying
-            ? "bg-[#F72585]/20 text-[#F72585]"
-            : "bg-[#7209B7]/20 text-[#7209B7]"
-        } px-4 py-2 rounded-lg hover:bg-opacity-30 transition-colors`}
+            ? "bg-[#F72585]/40 text-[#F72585]"
+            : "bg-[#7209B7]/40 text-[#7209B7]"
+        } px-5 py-3 rounded-lg hover:bg-opacity-30 transition-colors text-base`}
       >
         {isPlaying ? (
-          <Pause className="w-4 h-4" />
+          <Pause className="w-5 h-5" />
         ) : (
-          <Play className="w-4 h-4" />
+          <Play className="w-5 h-5" />
         )}
         <span>{isPlaying ? "Pause" : "Play"}</span>
       </button>
@@ -439,15 +188,15 @@ const PreviewState = ({
       <button
         onClick={(e) => {
           e.stopPropagation();
-          handleReset(); // Add this line to properly reset the state
-          // Give a slight delay to ensure the reset completes before opening file dialog
+          handleReset(); // Call handleReset to clear the current file and reset state
+          // After resetting, trigger the file input click to select a new file
           setTimeout(() => {
             document.getElementById("fileInput")?.click();
-          }, 10);
+          }, 100);
         }}
-        className="flex items-center gap-2 bg-white/5 text-white/80 px-4 py-2 rounded-lg hover:bg-white/10 transition-colors"
+        className="flex items-center gap-2 bg-white/5 text-white/80 px-5 py-3 rounded-lg hover:bg-white/10 transition-colors text-base"
       >
-        <RefreshCw className="w-4 h-4" />
+        <RefreshCw className="w-5 h-5" />
         <span>Replace</span>
       </button>
     </div>
@@ -456,8 +205,8 @@ const PreviewState = ({
 
 // Processing state component
 const ProcessingState = () => (
-  <div className="border-2 border-[#7209B7]/30 rounded-xl p-10 cursor-pointer text-center h-72 flex flex-col items-center justify-center">
-    <div className="w-20 h-20 mb-6">
+  <div className="border-2 border-[#7209B7]/30 rounded-xl p-12 cursor-pointer text-center h-96 flex flex-col items-center justify-center">
+    <div className="w-28 h-28 mb-8">
       <svg viewBox="0 0 100 100" className="w-full h-full">
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -490,8 +239,10 @@ const ProcessingState = () => (
       </svg>
     </div>
     <AudioWave playing={true} />
-    <p className="mt-5 text-white font-medium">Processing your audio...</p>
-    <p className="text-white/50 text-sm mt-2">
+    <p className="mt-6 text-white font-medium text-xl">
+      Processing your audio...
+    </p>
+    <p className="text-white/50 text-base mt-2">
       This usually takes less than a minute
     </p>
   </div>
@@ -547,8 +298,6 @@ const HeroSection = () => {
     if (e.target.files && e.target.files[0]) {
       handleFile(e.target.files[0]);
     }
-    // Reset the input value to ensure the change event fires even if the same file is selected again
-    e.target.value = "";
   };
 
   // Common handler for both drop and file selection
@@ -705,7 +454,7 @@ const HeroSection = () => {
     "Select language";
 
   return (
-    <section className="min-h-screen relative pt-20 pb-32 overflow-hidden">
+    <section className="min-h-screen relative pt-20 md:mt-20 pb-40 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Animated circles */}
@@ -755,7 +504,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         {/* Two-column layout */}
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 pt-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 pt-10">
           {/* Left column - Text content */}
           <div className="w-full lg:w-1/2">
             {/* Tech badge */}
@@ -858,19 +607,19 @@ const HeroSection = () => {
               transition={{ duration: 1, delay: 0.6 }}
             >
               {/* Decorative circles */}
-              <div className="absolute -top-12 -left-12 w-24 h-24 rounded-full border border-[#7209B7]/30"></div>
-              <div className="absolute -bottom-8 -right-8 w-16 h-16 rounded-full border border-[#F72585]/30"></div>
+              <div className="absolute -top-16 -left-16 w-32 h-32 rounded-full border border-[#7209B7]/30"></div>
+              <div className="absolute -bottom-12 -right-12 w-24 h-24 rounded-full border border-[#F72585]/30"></div>
 
               {/* Upload panel */}
               <motion.div
                 animate={controls}
-                className="bg-gradient-to-br from-[#150C28] to-[#0F0A19] overflow-visible rounded-2xl border border-white/5 shadow-lg relative z-10"
+                className="bg-gradient-to-br from-[#150C28] to-[#0F0A19] overflow-visible rounded-2xl border border-white/5 shadow-xl relative z-10"
               >
                 {/* Top navigation bar */}
-                <div className="flex items-center justify-between px-6 py-4 border-b border-white/5">
-                  <div className="flex items-center gap-2">
-                    <FileAudio2 className="w-5 h-5 text-[#F72585]" />
-                    <span className="font-medium text-white">
+                <div className="flex items-center justify-between px-8 py-5 border-b border-white/5">
+                  <div className="flex items-center gap-3">
+                    <FileAudio2 className="w-6 h-6 text-[#F72585]" />
+                    <span className="font-medium text-white text-lg">
                       Audio Transcription
                     </span>
                   </div>
@@ -879,7 +628,7 @@ const HeroSection = () => {
                     {[1, 2, 3].map((i) => (
                       <div
                         key={i}
-                        className="w-2 h-2 rounded-full bg-white/20"
+                        className="w-2.5 h-2.5 rounded-full bg-white/20"
                       />
                     ))}
                   </div>
@@ -901,7 +650,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Bottom controls */}
-                <div className="border-t border-white/5 p-6 flex flex-col lg:flex-row gap-4 justify-between relative">
+                <div className="border-t border-white/5 p-8 flex flex-col lg:flex-row gap-5 justify-between relative">
                   {/* Language selector */}
                   <div className="w-full">
                     <SearchSelect
@@ -910,14 +659,14 @@ const HeroSection = () => {
                       onChange={setSelectedLanguage}
                       placeholder="Select language"
                       searchPlaceholder="Search language..."
-                      icon={<Languages className="w-4 h-4" />}
+                      icon={<Languages className="w-5 h-5" />}
                       emptyMessage="No languages found"
                     />
                   </div>
 
                   {/* Transcribe button - disabled until file is uploaded and language is selected */}
                   <button
-                    className={`w-full lg:w-auto px-6 py-2 rounded-lg font-medium transition-all whitespace-nowrap
+                    className={`w-full lg:w-auto px-8 py-3 rounded-lg font-medium transition-all whitespace-nowrap text-base
                       ${
                         uploadedFile && selectedLanguage
                           ? "bg-gradient-to-r from-[#7209B7] to-[#F72585] text-white hover:shadow-lg hover:shadow-purple-500/30"
